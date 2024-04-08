@@ -2,7 +2,7 @@ package uvg;
 
 import java.util.Vector;
 
-public class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E> {
+public class VectorHeap<E extends Comparable<E>> implements UVGPriorityQueue<E> {
     
     protected Vector<E> data;
 
@@ -14,20 +14,20 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E> {
         int i;
         data = new Vector<E>(v.size());
         for(i = 0; i <v.size(); i++){
-            add(v.get(i));
+            addValue(v.get(i));
         }
     }
 
     protected static int parent(int i){
-        return (i-1/2);
+        return (i-1)/2;
     }
 
     protected static int left(int i){
-        return 2*i+1;
+        return (2*i)+1;
     }
 
     protected static int right(int i){
-        return (2*i+1) + 1;
+        return 2*(i+1);
     }
 
     public void percolateUp(int leaf){
@@ -41,7 +41,7 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E> {
         data.set(leaf, value);
     }
 
-    public void add(E value){
+    public void addValue(E value){
         data.add(value);
         percolateUp(data.size()-1);
     }
@@ -67,12 +67,8 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E> {
             }
             else{
                 data.set(root, value);
+                return;
             }
-
-
-           
-
-
         }
     }
 
