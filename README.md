@@ -3,7 +3,6 @@
 ## Autores
 
  - Hugo Daniel Barillas Ajín
- - List item
 
 ## Descripción
 
@@ -11,7 +10,7 @@ Este repositorio contiene un sistema de atención de pacientes según su momento
  
 ## UML
 
-![UML](resources\UML.png)
+![UML](.\resources\UML.png)
 
 
 ## Ejecución 
