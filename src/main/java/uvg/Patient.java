@@ -9,7 +9,6 @@ public class Patient implements Comparable<Patient> {
         this.name = name;
         this.diagnosis = diagnosis;
         this.priority = priorty;
-        String priority = " *([^,]*), *([^,]*), *([^,]*)\\|";
     }
 
     public void setName(String name){

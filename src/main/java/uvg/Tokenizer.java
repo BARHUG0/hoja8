@@ -11,7 +11,7 @@ public class Tokenizer {
      * @param str
      * @return ArrayList<Association<String, String>>
      */
-    public ArrayList<Patient> getAssociations(String str){
+    public static ArrayList<Patient> getAssociations(String str){
 
         String regex = " *([^,]*), *([^,]*), *([^,]*)\\|";
         Pattern pattern = Pattern.compile(regex); 

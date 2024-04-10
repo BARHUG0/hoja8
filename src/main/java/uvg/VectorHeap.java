@@ -6,10 +6,14 @@ public class VectorHeap<E extends Comparable<E>> implements UVGPriorityQueue<E> 
     
     protected Vector<E> data;
 
-    public VectorHeap(){
+    public  VectorHeap(){
         data = new Vector<E>();
     }
 
+    
+    /** 
+     * @param v
+     */
     public VectorHeap(Vector<E> v){
         int i;
         data = new Vector<E>(v.size());
@@ -18,18 +22,37 @@ public class VectorHeap<E extends Comparable<E>> implements UVGPriorityQueue<E> 
         }
     }
 
+    
+    /** 
+     * @param i
+     * @return int
+     */
     protected static int parent(int i){
         return (i-1)/2;
     }
 
+    
+    /** 
+     * @param i
+     * @return int
+     */
     protected static int left(int i){
         return (2*i)+1;
     }
 
+    
+    /** 
+     * @param i
+     * @return int
+     */
     protected static int right(int i){
         return 2*(i+1);
     }
 
+    
+    /** 
+     * @param leaf
+     */
     public void percolateUp(int leaf){
         int parent = parent(leaf);
         E value = data.get(leaf);
@@ -41,11 +64,19 @@ public class VectorHeap<E extends Comparable<E>> implements UVGPriorityQueue<E> 
         data.set(leaf, value);
     }
 
+    
+    /** 
+     * @param value
+     */
     public void addValue(E value){
         data.add(value);
         percolateUp(data.size()-1);
     }
 
+    
+    /** 
+     * @param root
+     */
     protected void pushDownRoot(int root){
         int heapSize = data.size();
         E value = data.get(root);
@@ -73,10 +104,18 @@ public class VectorHeap<E extends Comparable<E>> implements UVGPriorityQueue<E> 
     }
 
 
+    
+    /** 
+     * @return E
+     */
     public E getFirst(){
         return data.get(0);
     }
 
+    
+    /** 
+     * @return E
+     */
     public E remove(){
         E minVal = getFirst();
         data.set(0, data.get(data.size()-1));
@@ -85,6 +124,10 @@ public class VectorHeap<E extends Comparable<E>> implements UVGPriorityQueue<E> 
         return minVal;
     }
 
+    
+    /** 
+     * @return boolean
+     */
     public boolean isEmpty(){
         return data.isEmpty();
     }
@@ -93,6 +136,10 @@ public class VectorHeap<E extends Comparable<E>> implements UVGPriorityQueue<E> 
         data = new Vector<E>();
     }
 
+    
+    /** 
+     * @return int
+     */
     public int size(){
         return data.size();
     }
