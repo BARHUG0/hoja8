@@ -11,6 +11,7 @@ Este repositorio contiene un sistema de atención de pacientes según su momento
  
 ## UML
 
+![UML](resources\UML.png)
 
 
 ## Ejecución 
